@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -37,6 +32,18 @@ gender_net = caffe.Classifier(gender_net_model_file, gender_net_pretrained,
                        raw_scale=255,
                        image_dims=(256, 256))
 
+age_list=['(0, 2)','(4, 6)','(8, 12)','(15, 20)','(25, 32)','(38, 43)','(48, 53)','(60, 100)']
+gender_list=['Male','Female']
+
+example_image = '../example_image.jpg'
+input_image = caffe.io.load_image(example_image)
+_ = plt.imshow(input_image)
+
+prediction = age_net.predict([input_image]) 
+
+print 'predicted age:', age_list[prediction[0].argmax()]
 
 
-# In[ ]:
+prediction = gender_net.predict([input_image]) 
+
+print 'predicted gender:', gender_list[prediction[0].argmax()]
