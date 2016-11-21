@@ -6,8 +6,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-get_ipython().magic(u'matplotlib inline')
-
+%matplotlib inline
 
 caffe_root = './caffe-master/' 
 import sys
@@ -19,7 +18,6 @@ plt.rcParams['image.interpolation'] = 'nearest'
 plt.rcParams['image.cmap'] = 'gray'
 
 
+
+
 # In[ ]:
-
-
-
