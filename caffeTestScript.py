@@ -47,3 +47,5 @@ print 'predicted age:', age_list[prediction[0].argmax()]
 prediction = gender_net.predict([input_image]) 
 
 print 'predicted gender:', gender_list[prediction[0].argmax()]
+
+print 'it works!!'
